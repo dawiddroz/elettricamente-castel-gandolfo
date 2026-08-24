@@ -1,0 +1,47 @@
+/* ============================================================
+   Elettricamente s.r.l.s. — variabili di design
+   Concept "Il banco della luce": giallo segnale su antracite
+   blu e avorio. Tema governato da html[data-luce="on"|"off"].
+   ============================================================ */
+
+:root {
+  /* palette fissa */
+  --giallo:    #F0B90B;
+  --antracite: #202A30;
+  --avorio:    #F8F6F1;
+  --tecnico:   #5C6B73;
+
+  /* tema (default: luce SPENTA — si accende al load) */
+  --bg:      #1B2329;
+  --bg-alt:  #202A30;
+  --panel:   #26333B;
+  --ink:     #F8F6F1;
+  --muted:   #A9B8BF;
+  --line:    rgba(248, 246, 241, 0.14);
+  --shadow:  rgba(0, 0, 0, 0.45);
+
+  /* accenti validi su entrambi i temi */
+  --accent:      var(--giallo);
+  --accent-ink:  var(--antracite); /* testo su giallo: sempre antracite */
+}
+
+html[data-luce="on"] {
+  --bg:      var(--avorio);
+  --bg-alt:  #EFECE2;
+  --panel:   #FFFFFF;
+  --ink:     var(--antracite);
+  --muted:   var(--tecnico);
+  --line:    rgba(32, 42, 48, 0.16);
+  --shadow:  rgba(32, 42, 48, 0.18);
+}
+
+:root {
+  --font-display: 'Archivo', 'Arial Black', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --w-container: 1180px;
+  --r-card: 18px;
+  --r-tag: 8px;
+  --dur-theme: 0.9s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

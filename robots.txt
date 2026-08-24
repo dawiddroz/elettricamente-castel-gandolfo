@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dawiddroz.github.io/elettricamente-castel-gandolfo/sitemap.xml

@@ -1,0 +1,73 @@
+/* ============================================================
+   Elettricamente — base: reset, tipografia, sezioni
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: auto; } /* lo scroll lo guida Lenis */
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  transition: background-color var(--dur-theme) var(--ease-out),
+              color var(--dur-theme) var(--ease-out);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; border: 0; background: none; cursor: pointer; color: inherit; }
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.7rem, 6.4vw, 5.2rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+h3 { font-size: clamp(1.25rem, 2.2vw, 1.55rem); letter-spacing: -0.01em; }
+
+.container {
+  width: min(var(--w-container), calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+.kicker::before {
+  content: "";
+  width: 26px; height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-head { max-width: 640px; margin-bottom: clamp(2.2rem, 5vw, 3.6rem); }
+.section-head p { color: var(--muted); margin-top: 0.9rem; font-size: 1.06rem; }
+
+/* elementi rivelati via JS: nascosti finché GSAP non li anima.
+   Fallback: <noscript> + safety-net a 4000ms in main.js */
+[data-rv] { opacity: 0; will-change: transform, opacity; }
+
+::selection { background: var(--giallo); color: var(--antracite); }
+
+:focus-visible { outline: 3px solid var(--giallo); outline-offset: 3px; border-radius: 4px; }
