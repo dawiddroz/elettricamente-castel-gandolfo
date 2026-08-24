@@ -45,12 +45,12 @@
     if (!hasGsap || !dim) { setLuce(true, false); return; }
     var tl = gsap.timeline({ onComplete: function () { setLuce(true, false); } });
     tl
-      .to(dim, { opacity: 0.62, duration: 0.09, delay: 0.35 })
-      .to(dim, { opacity: 0.9,  duration: 0.07 })
-      .to(dim, { opacity: 0.4,  duration: 0.08 })
-      .to(dim, { opacity: 0.85, duration: 0.06 })
-      .to(dim, { opacity: 0.18, duration: 0.09 })
-      .to(dim, { opacity: 0.55, duration: 0.05 })
+      .to(dim, { opacity: 0.42, duration: 0.14, delay: 0.25, ease: 'power1.inOut' })
+      .to(dim, { opacity: 0.58, duration: 0.11, ease: 'power1.inOut' })
+      .to(dim, { opacity: 0.28, duration: 0.12, ease: 'power1.inOut' })
+      .to(dim, { opacity: 0.48, duration: 0.10, ease: 'power1.inOut' })
+      .to(dim, { opacity: 0.12, duration: 0.13, ease: 'power1.inOut' })
+      .to(dim, { opacity: 0.32, duration: 0.09, ease: 'power1.inOut' })
       .to(dim, { opacity: 0,    duration: 0.4, ease: 'power2.out' });
   }
   flickerAccensione();
